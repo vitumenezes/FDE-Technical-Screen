@@ -1,3 +1,6 @@
+import sys
+
+
 def sort(width, height, length, mass) -> str:
     # checking invalid types
     if not all(isinstance(x, (int, float)) for x in (width, height, length, mass)):
@@ -24,3 +27,8 @@ def sort(width, height, length, mass) -> str:
         return 'SPECIAL'
 
     return 'STANDARD'
+
+
+if __name__ == '__main__':
+    args = [float(arg) for arg in sys.argv[1:]]
+    print(sort(*args))
